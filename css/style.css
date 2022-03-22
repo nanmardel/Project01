@@ -12,10 +12,11 @@ body {
 }
 
 header {
-    font-size: 25px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 45px;
     font-weight: bold;
     text-align: center;
-    
+    color: #060214;
 }
 
 
@@ -55,27 +56,31 @@ header {
     background-color: #052AF2;
 }
 #blue.light {
-    background-color: #3190F7;
+    background-color: #9ACDF9;
 }
 
 #red {
     background-color: #DD0404;
 }
 #red.light {
-    background-color: #F73131;
+    background-color: #F9AB9A;
 }
 
 #green {
     background-color: #097B05;
 }
 #green.light {
-    background-color: #38F731;
+    background-color: #A0F99A;
 }
 
 #yellow {
-    background-color: #EBEE08;
+    background-color: #E7E304;
 }
 
 #yellow.light {
-    background-color: #F5F731;
+    background-color: #F1F99A;
+}
+
+.d-none {
+    display: none;
 }

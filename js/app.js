@@ -29,42 +29,75 @@ const replayBtn = document.querySelector('#replay');
 //set up event listeners
 document.querySelector('.colors').addEventListener('click', handleClick);
 playBtn.addEventListener('click', init);
-replayBtn.addEventListener('click', init);
+replayBtn.addEventListener('click');
 
 /*------------------FUNCTIONS-----------------*/
 //Initial controller function sets all the initial state vavlues (model)
+
 function init(e){
-    console.log('init function is working')
-userEntry = [];
+    console.log('init function is working') //DELETE
+
+    
+
+    userEntry = [];
+
 // radom color pattern that needs to be immitated
 
 const randomIndex = Math.floor(Math.random() * colors.length);
 let randomColor = colors[randomIndex];
-console.log(randomColor);
+console.log(randomColor);  //DELETE
 
 randomSequence.push(randomColor);
-console.log(randomSequence);
+console.log(randomSequence);  //DELETE
 
-// loop through random sequence , settimeinterval, call function lightSquare
+// Get sqaures to light up when user presses play to initiate randomSequence
+//loop through random sequence , setTimeOut, call function lightSquare
+// var second = 2000
+// randomSequence.forEach((color, i) => {
+//     setTimeout(lightSquare(color), (i + 1) * second)
+//     console.log(i);  //DELETE
+    
+// });
+
+let index = 0
+let interval = setInterval(() => {
+    lightSquare(randomSequence[index]);
+    
+    console.log(index);
+    console.log(randomSequence[index]);
+    if(index + 1 === randomSequence.length){
+        clearInterval(interval)
+    }
+    index = index + 1;
+}, 2000)       
+
+
 }
 
+
 function handleClick(e){
-    console.log(e.target.id);
+    console.log(e.target.id); //DELETE
 userEntry.push(e.target.id)
 if(userEntry[userEntry.length -1] === randomSequence[userEntry.length -1]) {
     lightSquare(e.target.id)
-    console.log(userEntry);
-}else{
+    console.log(userEntry);  // DELETE
+}else{ console.log('game over');
 
 }
+// keep track of when the user is done immitatting the random sequence 
 if(userEntry.length === randomSequence.length){
     init()
 }
 
 
 }
-
+// get the squares to light up for one second
 function lightSquare(color){
     document.getElementById(color).classList.add("light");
     setTimeout(() => document.getElementById(color).classList.remove("light"),1000);
+    console.log(color);
 }
+
+// function hidePlaybtn(play){
+//     document.getElementById(play).classList.add("d-none");
+// }
