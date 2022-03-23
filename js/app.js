@@ -4,7 +4,7 @@
 //create function to formulate random color patters using "blue", 
 //"red", "green", and "yellow"
 //maintain track of btn clicked to make sure they are correct
-// if correct = present new color pattern
+//if correct = present new randomSequence
 //if wrong = show "Game Over: Replay" btn
 
 /*----------------CONSTANT----------*/
@@ -23,28 +23,26 @@ const colorBtns = document.querySelectorAll('.colors');
 const playBtn = document.querySelector('#play');
 const replayBtn = document.querySelector('#replay');
 const correctMsg = document.querySelector('#Correct');
+const instructions = document.querySelector('#instructions');
 
 /*---------EVENT LISTENERS-------*/
 //set up event listeners
 document.querySelector('.colors').addEventListener('click', handleClick);
 playBtn.addEventListener('click', init);
 replayBtn.addEventListener('click', init);
-replayBtn.addEventListener('click', () =>{
+replayBtn.addEventListener('click', () => {
     replayBtn.innerText = "   "});
-    
-//replayBtn.addEventListener('click',() => {
-//replayBtn.style.display = 'none'});
 playBtn.addEventListener('click', () => {
     playBtn.style.display = 'none'});
 
 /*------------------FUNCTIONS-----------------*/
 //Initial controller function sets all the initial state vavlues (model)
 function init(e){
-    
+    document.querySelector('#instructions').style.visibility = 'hidden';
 
     userEntry = [];
 
-// radom color pattern that needs to be immitated
+// Array of radom color pattern that needs to be introduced to user
 
 const randomIndex = Math.floor(Math.random() * colors.length);
 let randomColor = colors[randomIndex];
