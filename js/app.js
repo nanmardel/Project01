@@ -39,7 +39,7 @@ function init(e){
     document.querySelector('#instructions').style.visibility = 'hidden';
     document.querySelector('#replay').style.visibility = 'hidden';
 
-    userEntry = [];
+userEntry = [];
 
 // Array of radom color pattern that needs to be introduced to user
 const randomIndex = Math.floor(Math.random() * colors.length);
@@ -51,6 +51,7 @@ randomSequence.push(randomColor);
 // Get sqaures to light up after user presses play btn to initiate randomSequence
 //loop through random sequence , setTimeOut, call function lightSquare
 let index = 0
+
 let interval = setInterval(() => {
     lightSquare(randomSequence[index]);
     if(index + 1 === randomSequence.length){

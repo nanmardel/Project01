@@ -107,23 +107,17 @@ h3 {
 
 @media screen and (max-width:480px){
     .colors {
-        display: grid;
         grid-template-columns: 100px 100px;
         grid-template-rows: 100px 100px;
         grid-gap: 10px;
         justify-content: center;
         margin-bottom: 10px;
-        }
-}
-
-@media  screen and (max-width:480px) {
+    }
+    
     #play{
-        display: grid;
         grid-template-rows: 50px;
         grid-template-columns: 50px;
         justify-content: center;
-        background-color: #5700ff;
-        color: white;
         margin: 50px;
         margin-left: 150px;
         width: 80px;
@@ -131,29 +125,21 @@ h3 {
         border-radius: 12px;
         font-size: 25px;
         padding: 10px 24px;
-}
     }
     
-
-@media screen and (max-width:480px){
     h3 {
         font-size: 19px;
         text-align: center;
         font-weight: lighter;
-        color: #6d3bd1;
+        
     }
-}
-
-@media screen and (max-width:480px){
     #replay {
-        display: grid;
         font-size: 25px;
         width: auto;
         height: 50px;
-        color: white;
         align-items: center;
-        background-color: #5700ff;
         margin-bottom: 50px;
         justify-content: center;
+        visibility: hidden;
     }
 }
