@@ -1,11 +1,10 @@
 //Begin by tracking initiation of game (listen for click) "Play" btn
-//inform Player to watch pattern before presenting pattern show msg "Watch"
 // Display color that needs to be clicked
 //create function to formulate random color patters using "blue", 
 //"red", "green", and "yellow"
 //maintain track of btn clicked to make sure they are correct
 //if correct = present new randomSequence
-//if wrong = show "Game Over: Replay" btn
+//if wrong = show "Game Over: Replay" msg
 
 /*----------------CONSTANT----------*/
 const colors = ["blue","red","green","yellow"];
@@ -22,7 +21,6 @@ let userEntry = []; //correct color clicked by user
 const colorBtns = document.querySelectorAll('.colors');
 const playBtn = document.querySelector('#play');
 const replayBtn = document.querySelector('#replay');
-const correctMsg = document.querySelector('#Correct');
 const instructions = document.querySelector('#instructions');
 
 /*---------EVENT LISTENERS-------*/
@@ -30,20 +28,19 @@ const instructions = document.querySelector('#instructions');
 document.querySelector('.colors').addEventListener('click', handleClick);
 playBtn.addEventListener('click', init);
 replayBtn.addEventListener('click', init);
-replayBtn.addEventListener('click', () => {
+replayBtn.addEventListener('click', () => { //remove msg after new game starts
     replayBtn.innerText = "   "});
-playBtn.addEventListener('click', () => {
+playBtn.addEventListener('click', () => {    //hide play btn when game begins
     playBtn.style.display = 'none'});
 
 /*------------------FUNCTIONS-----------------*/
-//Initial controller function sets all the initial state vavlues (model)
+//Initial controller function sets all the initial state vavlues 
 function init(e){
     document.querySelector('#instructions').style.visibility = 'hidden';
 
     userEntry = [];
 
 // Array of radom color pattern that needs to be introduced to user
-
 const randomIndex = Math.floor(Math.random() * colors.length);
 let randomColor = colors[randomIndex];
 
@@ -62,7 +59,7 @@ let interval = setInterval(() => {
 }, 2000)       
 }
 
-
+//Monitor what square is being clicked
 function handleClick(e) {
     userEntry.push(e.target.id)
 
@@ -75,7 +72,6 @@ if(userEntry[userEntry.length -1] === randomSequence[userEntry.length -1]) {
     }
     
 // keep track of when the user is done entering the randomSequence 
-
 if(userEntry.length === randomSequence.length){
     init()
     }
@@ -90,7 +86,7 @@ function gameOver(){
     }
 
 
-// Lightup suares for one second
+// Lightup squares for one second
 function lightSquare(color){
     document.getElementById(color).classList.add("light");
     setTimeout(() => document.getElementById(color).classList.remove("light"),1000);
