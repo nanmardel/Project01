@@ -8,9 +8,9 @@ In this game I recreated the same concept-the computer creates a color sequence 
 
 
 ## Screenshots of Game
-![Initiation of Game](https://i.imgur.com/0zdaNzK.png)
-![Initiation of Sequence](https://i.imgur.com/kJLuWH5.png)
-![Game Over](https://i.imgur.com/Szv12L9.png)
+![Initiation of Game](https://i.imgur.com/vPzDgoc.png)
+![Square lightup](https://i.imgur.com/07nuz3V.png)
+![Game Over](https://i.imgur.com/eWuzTwB.png)
 
 ## Technologies Used
 1. HTML
