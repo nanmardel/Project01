@@ -37,6 +37,7 @@ playBtn.addEventListener('click', () => {    //hide play btn when game begins
 //Initial controller function sets all the initial state vavlues 
 function init(e){
     document.querySelector('#instructions').style.visibility = 'hidden';
+    document.querySelector('#replay').style.visibility = 'hidden';
 
     userEntry = [];
 
@@ -56,7 +57,7 @@ let interval = setInterval(() => {
         clearInterval(interval)
     }
     index = index + 1;
-}, 2000)       
+}, 1000)       
 }
 
 //Monitor what square is being clicked
@@ -80,6 +81,7 @@ if(userEntry.length === randomSequence.length){
 //function and restart sequence
 function gameOver(){
     document.querySelector('.colors').removeEventListener('click', handleClick);
+    document.querySelector('#replay').style.visibility = 'visible';
     document.getElementById("replay").innerText = "Game Over: Press To Replay";
     document.querySelector('.colors').addEventListener('click', handleClick);
     randomSequence = [];
@@ -89,6 +91,6 @@ function gameOver(){
 // Lightup squares for one second
 function lightSquare(color){
     document.getElementById(color).classList.add("light");
-    setTimeout(() => document.getElementById(color).classList.remove("light"),1000);
+    setTimeout(() => document.getElementById(color).classList.remove("light"),500);
     console.log(color);
 }

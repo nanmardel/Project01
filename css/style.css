@@ -48,12 +48,13 @@ h3 {
     display: grid;
     font-size: 30px;
     font-family: 'Poiret One', cursive;
-    width: auto;
+    width: fit-content;
     height: 60px;
     color: white;
     align-items: center;
     background-color: #5700ff;
     margin-bottom: 50px;
+    margin-left: 200px;
     justify-content: center;
 }
 
