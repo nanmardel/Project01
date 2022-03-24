@@ -78,7 +78,7 @@ if(userEntry[userEntry.length -1] === randomSequence[userEntry.length -1]) {
 
 if(userEntry.length === randomSequence.length){
     init()
-}
+    }
 }
 //when a wrong square is clicked, do not allow user to click on squares, show "game over",return click
 //function and restart sequence
