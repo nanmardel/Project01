@@ -95,3 +95,5 @@ function lightSquare(color) {
     document.getElementById(color).classList.add("light");
     setTimeout(() => document.getElementById(color).classList.remove("light"),500);
 }
+
+
